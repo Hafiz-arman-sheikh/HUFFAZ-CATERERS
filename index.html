@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ur" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUFFAZ CATERERS | Taste The Joy - Premium Catering Services</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --accent-gold: #F3E5AB;
+            --dark-bg: #1A0D08;
+            --card-bg: #26140B;
+            --light-text: #F8F5F0;
+            --dim-text: #C5A880;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .brand-font {
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 13, 8, 0.95);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            z-index: 1000;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-container img {
+            height: 50px;
+            border-radius: 5px;
+            border: 1px solid var(--primary-gold);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-gold);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #D4AF37, #AA7C11);
+            color: #000;
+            padding: 10px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(26, 13, 8, 0.9)), 
+                        url('https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1500&q=80') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin-bottom: 30px;
+            color: var(--accent-gold);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary-gold);
+        }
+
+        /* Menu Gallery - 10 Items Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .food-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: 0.3s;
+        }
+
+        .food-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-gold);
+            box-shadow: 0 15px 30px rgba(153, 83, 55, 0.5);
+        }
+
+        .food-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .food-info {
+            padding: 20px;
+        }
+
+        .food-info h3 {
+            color: var(--primary-gold);
+            margin-bottom: 8px;
+        }
+
+        .food-info p {
+            font-size: 0.9rem;
+            color: var(--dim-text);
+        }
+
+        /* Packages Section (Per Head) */
+        .packages-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .package-card {
+            background: var(--card-bg);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .package-card.popular {
+            border-color: var(--primary-gold);
+            transform: scale(1.03);
+            background: linear-gradient(180deg, #331A0E 0%, var(--card-bg) 100%);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-gold);
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            color: var(--primary-gold);
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .price-tag span {
+            font-size: 1rem;
+            color: var(--light-text);
+            font-weight: normal;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .package-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.95rem;
+        }
+
+        .package-features li i {
+            color: var(--primary-gold);
+            margin-right: 10px;
+        }
+
+        /* Per Head Calculator */
+        .calculator-box {
+            background: var(--card-bg);
+            border: 1px solid var(--primary-gold);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 40px auto 0;
+            text-align: center;
+        }
+
+        .calc-inputs {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .calc-inputs input, .calc-inputs select {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--primary-gold);
+            background: var(--dark-bg);
+            color: var(--light-text);
+            outline: none;
+        }
+
+        /* Contact & Footer */
+        footer {
+            background: #0D0604;
+            padding: 40px 8% 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+        }
+
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            padding: 12px 20px;
+            font-size: 18px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            z-index: 100;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .package-card.popular { transform: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <!-- Replace logo path with your logo URL/File -->
+            <img src="logo/logo.png" alt="HUFAZ CATERERS LOGO" onerror="this.src='https://via.placeholder.com/50x50/D4AF37/000000?text=HC'">
+            <div class="logo-text">HUFFAZ CATERERS</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Our Menu</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#calculator">Estimate</a></li>
+            </ul>
+        </nav>
+        <a href="https://wa.me/+92 310 0000000" class="btn-gold"><i class="fab fa-whatsapp"></i> Book Event</a>
+    </header>
+ 
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>HUFFAZ CATERERS</h1>
+        <p>Taste The Joy | Shadi, Valima & All Event Catering Services</p>
+        <a href="#packages" class="btn-gold" style="font-size: 1.1rem; padding: 12px 30px;">View Per-Head Packages</a>
+    </section>
+
+    
+
+    <!-- Food Items Section (At least 10 items with Placeholders) -->
+    <section id="menu">
+        <div class="section-title">
+            <h2>Our Culinary Specialties</h2>
+            <p style="color: var(--dim-text); margin-top: 10px;">Authentic Traditional & Continental Delicacies</p>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Item 1 -->
+            <div class="food-card">
+                <img src="logo/biyani.jpg" alt="Special Beef Biryani" class="food-img">
+                <div class="food-info">
+                    <h3>Special Beef Biryani</h3>
+                    <p>Rich aromatic basmati rice cooked with authentic spices and tender meat.</p>
+                </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="food-card">
+                <img src="logo/qorma.JPG" alt="Shahi Chicken Korma" class="food-img">
+                <div class="food-info">
+                    <h3>Shahi Chicken Korma</h3>
+                    <p>Traditional rich gravy with a blend of almond paste and authentic spices.</p>
+                </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="food-card">
+                <img src="logo/Royal Lab-e-Sheerin.jpg" alt="Lab-e-Sheerin" class="food-img">
+                <div class="food-info">
+                    <h3>Royal Lab-e-Sheerin</h3>
+                    <p>Rich creamy custard topped with jellies, dry fruits, and fresh fruits.</p>
+                </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="food-card">
+                <img src="logo/Lahori Chicken Karahi.jpg" alt="Chicken Karahi" class="food-img">
+                <div class="food-info">
+                    <h3>Lahori Chicken Karahi</h3>
+                    <p>Freshly cooked in butter & green chillies with rich tomato base.</p>
+                </div>
+            </div>
+            <!-- Item 5 -->
+            <div class="food-card">
+                <img src="logo/BBQ Chicken Seekh Kabab.jpg" alt="Seekh Kabab" class="food-img">
+                <div class="food-info">
+                    <h3>BBQ Chicken Seekh Kabab</h3>
+                    <p>Smoky, juicy charcoal grilled minced chicken kababs.</p>
+                </div>
+            </div>
+            <!-- Item 6 -->
+            <div class="food-card">
+                <img src="logo/Tandoori Sheermal & Naan.jpg" alt="Sheermal & Naan" class="food-img">
+                <div class="food-info">
+                    <h3>Tandoori Sheermal & Naan</h3>
+                    <p>Freshly baked hot Roghani Naan and sweet saffron Sheermal.</p>
+                </div>
+            </div>
+            <!-- Item 7 -->
+            <div class="food-card">
+                <img src="logo/Singaporean Rice.jpg" alt="Singaporean Rice" class="food-img">
+                <div class="food-info">
+                    <h3>Singaporean Rice</h3>
+                    <p>Layered rice with spicy chicken, noodles, and mayo garlic sauce.</p>
+                </div>
+            </div>
+            <!-- Item 8 -->
+            <div class="food-card">
+                <img src="logo/Mutton Degi Biryani.jpg" alt="Mutton Digh Biryani" class="food-img">
+                <div class="food-info">
+                    <h3>Mutton Degi Biryani</h3>
+                    <p>Traditional Karachi style digh cooked premium mutton biryani.</p>
+                </div>
+            </div>
+            <!-- Item 9 -->
+            <div class="food-card">
+                <img src="logo/Zafrani Shahi Kheer.JPG" alt="Shahi Kheer / Gajar Halwa" class="food-img">
+                <div class="food-info">
+                    <h3>Zafrani Shahi Kheer</h3>
+                    <p>Slow cooked thick rice pudding garnished with pistachios and almonds.</p>
+                </div>
+            </div>
+            <!-- Item 10 -->
+            <div class="food-card">
+                <img src="logo/Fresh Russian Salad.jpg" alt="Russian Salad" class="food-img">
+                <div class="food-info">
+                    <h3>Fresh Russian Salad</h3>
+                    <p>Creamy fruit and vegetable salad prepared with fresh ingredients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Per-Head Event Packages -->
+    <section id="packages" style="background: rgba(0,0,0,0.3);">
+        <div class="section-title">
+            <h2>Per-Head Event Packages</h2>
+            <p style="color: var(--dim-text); margin-top: 10px;">Select the best menu for your special occasion</p>
+        </div>
+
+        <div class="packages-container">
+            <!-- Standard Package -->
+            <div class="package-card">
+                <h3>Economy Menu</h3>
+                <div class="price-tag">Rs. 350 <span>/ Per Head</span></div>
+                <ul class="package-features">
+                    <li><i class="fas fa-check"></i> Chicken Biryani</li>
+                    <li><i class="fas fa-check"></i> Chicken Korma</li>
+                    <li><i class="fas fa-check"></i> Live Tandoori Naan</li>
+                    <li><i class="fas fa-check"></i> Kheer / Kulfi</li>
+                    <li><i class="fas fa-check"></i> Raita, Salad & Cold Drinks</li>
+                </ul>
+                <a href="+92 310 000000" class="btn-gold">Select Package</a>
+            </div>
+
+            <!-- Executive Package (Highlighted) -->
+            <div class="package-card popular">
+                <div class="popular-badge">Most Popular</div>
+                <h3>Wedding Special</h3>
+                <div class="price-tag">Rs. 400 <span>/ Per Head</span></div>
+                <ul class="package-features">
+                    <li><i class="fas fa-check"></i> Special Beef/Chicken Biryani</li>
+                    <li><i class="fas fa-check"></i> Chicken White Karahi / Korma</li>
+                    <li><i class="fas fa-check"></i> BBQ Seekh Kabab</li>
+                    <li><i class="fas fa-check"></i> Royal Lab-e-Sheerin</li>
+                    <li><i class="fas fa-check"></i> Sheermal & Hot Naan</li>
+                    <li><i class="fas fa-check"></i> Salad Bar, Raita, Drinks</li>
+                </ul>
+                <a href="+92 310 0000000" class="btn-gold">Select Package</a>
+            </div>
+
+            <!-- Premium Package -->
+            <div class="package-card">
+                <h3>VIP Royal Feast</h3>
+                <div class="price-tag">Rs. 550 <span>/ Per Head</span></div>
+                <ul class="package-features">
+                    <li><i class="fas fa-check"></i> Mutton Degi Biryani</li>
+                    <li><i class="fas fa-check"></i> Mutton Dasti / Chicken Makhni</li>
+                    <li><i class="fas fa-check"></i> Live BBQ Counter</li>
+                    <li><i class="fas fa-check"></i> Lab-e-Sheerin + Ice Cream</li>
+                    <li><i class="fas fa-check"></i> Taftan, Sheermal & Naan</li>
+                    <li><i class="fas fa-check"></i> Premium Mineral Water & Drinks</li>
+                </ul>
+                <a href="+92 310 0000000" class="btn-gold">Select Package</a>
+            </div>
+        </div>
+
+        <!-- Quick Estimate Calculator -->
+        <div class="calculator-box" id="calculator">
+            <h3 style="color: var(--primary-gold);">Instant Budget Estimator</h3>
+            <p style="font-size:0.9rem; color: var(--dim-text); margin-top:5px;">Calculate estimated cost according to your guests</p>
+            <div class="calc-inputs">
+                <input type="number" id="guestCount" placeholder="Number of Guests (e.g. 300)" value="200" oninput="calculateTotal()">
+                <select id="packageSelect" onchange="calculateTotal()">
+                    <option value="1200">Economy Package (Rs. 350)</option>
+                    <option value="1850" selected>Wedding Special (Rs. 400)</option>
+                    <option value="2600">VIP Royal Feast (Rs. 550)</option>
+                </select>
+            </div>
+            <h2 style="color: var(--light-text);">Total Estimate: <span id="totalPrice" style="color: var(--primary-gold);">Rs. 370,000</span></h2>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="logo-text" style="margin-bottom: 15px;">HUFFAZ CATERERS</div>
+        <p style="color: var(--dim-text); margin-bottom: 20px;">Providing quality food & catering services for Weddings, Valima, Corporate & Private Events across Karachi.</p>
+        <p><i class="fas fa-phone-alt" style="color: var(--primary-gold);"></i> +92 310 0000000 | <i class="fas fa-map-marker-alt" style="color: var(--primary-gold);"></i> Karachi, Pakistan</p>
+        <p style="margin-top: 25px; font-size: 0.8rem; color: #777;">&copy; 2026 Huffaz Caterers. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="+92 310 00000000." class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i> Chat with Us
+    </a>
+
+    <!-- JavaScript logic -->
+    <script>
+
+
+
+        function calculateTotal() {
+            const guests = document.getElementById('guestCount').value || 0;
+            const price = document.getElementById('packageSelect').value;
+            const total = guests * price;
+            
+            // Format number to Pakistani Rupee Currency Style
+            document.getElementById('totalPrice').innerText = 'Rs. ' + total.toLocaleString('en-PK');
+        }
+    </script>
+</body>
+</html>
