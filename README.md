@@ -1,29 +1,29 @@
-# 🍽️ Huffaz Caterers Website
+# Huffaz Caterers
 
-**Huffaz Caterers** ek fully responsive aur user-friendly catering service website hai. Yeh project customers ko catering packages dekhne, menu explore karne aur events ke liye catering booking/inquiries bhejne ki sahulat deta hai.
+A responsive catering website interface built with HTML, CSS, and JavaScript. Visitors can explore menu options and use the booking inquiry interface.
 
----
+## Features
 
-## 🛠️ Tech Stack & Tools Used
+- Responsive pages for desktop and mobile
+- Menu browsing and filtering
+- Cost estimation interface
+- Booking and contact inquiry forms
 
-- **HTML5:** Website ki structure aur layout design karne ke liye.
-- **CSS3:** Custom styling, smooth animations, aur fully responsive design ke liye.
-- **JavaScript (ES6):** Interactive features, menu filtering, aur dynamic behaviors ke liye.
-- **AI Assistance:** Code optimization, UI logic, aur structure refinement ke liye AI tools ki madad li gayi.
+This is a front-end project. Verify any booking submission or business integration before using it for real customer orders.
 
----
+## Built with
 
-## ✨ Key Features
+HTML5, CSS3, JavaScript. AI tools assisted with design exploration and code refinement.
 
-- 📱 **Fully Responsive:** Mobile, Tablet aur Desktop par behtareen display.
-- 🍲 **Interactive Menu:** Dishes aur Packages browse karne ka aasan tareeqa.
-- 🎨 **Modern UI/UX:** Clean, professional aur attractive layout.
-- 📩 **Contact & Inquiry Form:** Fast booking aur customer reach out ke liye.
+## Run locally
 
----
+```bash
+git clone https://github.com/Hafiz-arman-sheikh/HUFFAZ-CATERERS.git
+cd HUFFAZ-CATERERS
+```
 
-## 🚀 How to Run the Project
+Open `index.html` in a browser.
 
-1. Repository ko clone karein:
-   ```bash
-   git clone [https://github.com/your-username/HUFFAZ-CATERERS.git](https://github.com/your-username/HUFFAZ-CATERERS.git)
+## Developer
+
+[Hafiz Arman Sheikh](https://github.com/Hafiz-arman-sheikh)
